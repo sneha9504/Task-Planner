@@ -38,12 +38,6 @@ Create a `.env.local` file in the root directory:
 MONGODB_URI=your_mongodb_connection_string
 ```
 
-**Example:**
-
-```env
-MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/taskplanner
-```
-
 ### 4️⃣ Run the development server
 
 ```bash
