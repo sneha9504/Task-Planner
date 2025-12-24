@@ -98,24 +98,39 @@ export default function Dashboard({ user, onLogout }) {
   }
 
   // ✅ DRAG HANDLER (FIXED)
-  const handleDragEnd = (result) => {
-    if (!result.destination) return
+const handleDragEnd = async (result) => {
+  if (!result.destination) return
 
-    const taskId = result.draggableId
-    const newStatus = result.destination.droppableId
+  const taskId = result.draggableId
+  const newStatus = result.destination.droppableId
 
-    setTasks((prev) =>
-      prev.map((task) =>
-        task._id === taskId
-          ? {
+  // 1️⃣ Optimistic UI update
+  setTasks((prev) =>
+    prev.map((task) =>
+      task._id === taskId
+        ? {
             ...task,
             status: newStatus,
             completed: newStatus === "completed",
           }
-          : task
-      )
+        : task
     )
+  )
+
+  // 2️⃣ Persist to backend (IMPORTANT)
+  try {
+    await fetch(`/api/tasks/${taskId}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        status: newStatus,
+        completed: newStatus === "completed",
+      }),
+    })
+  } catch (error) {
+    console.error("Failed to update task status:", error)
   }
+}
 
   return (
     <div className="min-h-screen bg-background">

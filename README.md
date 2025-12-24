@@ -48,153 +48,31 @@ MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/taskplanner
 
 ```bash
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-### 5️⃣ Open in browser
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Navigate to [http://localhost:3000](http://localhost:3000)
+You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-## ✨ Features
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-### 🧩 Task Management
+## Learn More
 
-- **Add tasks** with:
-  - Title
-  - Description
-  - Priority (Low / Medium / High)
-  - Status (Pending / In Progress / Completed)
-  - Due date
-- **Delete tasks** with confirmation alert
-- **Edit tasks** to update details
-- **Mark tasks as completed**
+To learn more about Next.js, take a look at the following resources:
 
-### 📋 Task Organization
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-- **Task list view** with all tasks displayed
-- **Status-based grouping:**
-  - 🟨 Pending
-  - 🟦 In Progress
-  - 🟩 Completed
-- **Easy status updates** via dropdown or form
-- **Organized task cards** with clear visual hierarchy
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-### 🔍 Search, Filter & Sort
+## Deploy on Vercel
 
-- **Search** tasks by title or description
-- **Filter by:**
-  - Priority (Low / Medium / High)
-  - Status (Pending / In Progress / Completed)
-- **Real-time filtering** without page reload
-- Built with `shadcn/ui Select` for dark-mode support
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-### ⏰ Smart Visual Indicators
-
-- 🔴 **Overdue tasks** highlighted automatically
-- 📅 **Due date** displayed on each task card
-- **Priority badges** with color coding:
-  - 🟢 Low
-  - 🟡 Medium
-  - 🔴 High
-
-### 📊 Dashboard Stats
-
-- Total tasks
-- Completed tasks
-- Pending tasks
-- **Real-time updates** on any task action
-
-### 🌙 UI & UX
-
-- Dark-mode friendly interface
-- Clean card-based layout
-- Fully responsive design
-- Accessible components (Radix UI)
-- Intuitive task interactions
-
-## 📁 Project Structure
-
-```
-taskplanner/
-├── .next/                        # Next.js build output
-├── node_modules/                 # Dependencies
-├── public/                       # Static assets
-│   └── favicon.ico
-├── src/
-│   ├── app/
-│   │   ├── api/
-│   │   │   ├── auth/
-│   │   │   │   ├── login/
-│   │   │   │   └── signup/
-│   │   │   └── tasks/
-│   │   │       └── [id]/
-│   │   │           └── route.js  # CRUD operations for tasks
-│   │   ├── components/
-│   │   │   ├── ui/               # shadcn/ui components
-│   │   │   ├── add-task-form.jsx # Task creation form
-│   │   │   ├── auth-form.jsx     # Authentication form
-│   │   │   ├── dashboard.jsx     # Main dashboard component
-│   │   │   ├── task-list.jsx     # Task list display
-│   │   │   └── theme-provider.jsx # Dark mode provider
-│   │   ├── favicon.ico
-│   │   ├── globals.css           # Global styles
-│   │   ├── layout.js             # Root layout
-│   │   └── page.jsx              # Home/landing page
-│   └── lib/
-│       ├── db.js                 # MongoDB connection
-│       └── utils.ts              # Utility functions
-├── .env                          # Environment variables
-├── .gitignore
-├── package.json                  # Dependencies
-└── README.md                     # This file
-```
-
-## 🎯 Usage
-
-### Creating a Task
-
-1. Click the **"Add Task"** button
-2. Fill in the task details:
-   - Title (required)
-   - Description
-   - Priority level
-   - Status
-   - Due date
-3. Click **"Create Task"**
-
-### Managing Tasks
-
-- **View tasks:** Browse all tasks in list view
-- **Edit tasks:** Click on a task card to edit details
-- **Delete tasks:** Click the delete icon (with confirmation)
-- **Update status:** Change status via dropdown (Pending / In Progress / Completed)
-- **Mark complete:** Update task status to Completed
-
-### Filtering & Searching
-
-- Use the **search bar** to find tasks by title/description
-- Use **filter dropdowns** to narrow by priority or status
-- Filters work in combination with search
-
-## ⚠️ Assumptions
-
-- Authentication is handled externally (user object passed to Dashboard)
-- MongoDB is properly configured and accessible
-- Modern browser with ES6+ support
-
-## 🔧 Future Enhancements
-
-- [ ] User authentication (NextAuth / JWT)
-- [ ] Due date reminders & notifications
-- [ ] Activity logs for task changes
-- [ ] Role-based access (Admin / Member)
-
-
-## 👨‍💻 Author
-
-**Your Name**
-- GitHub: (https://github.com/sneha9504)
-- LinkedIn: (https://www.linkedin.com/in/snehawani/)
-
-⭐ **Star this repository** if you find it helpful!
-
-📧 **Questions?** Open an issue or reach out at snehawani4321@gmail.com
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
